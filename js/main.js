@@ -70,15 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- Navbar scroll effect --- */
   const navbar = document.getElementById('main-nav');
   if (navbar) {
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 100) {
+      if (window.scrollY > 100) {
         navbar.classList.add('shadow-lg');
       } else {
         navbar.classList.remove('shadow-lg');
       }
-      lastScroll = currentScroll;
     }, { passive: true });
   }
 
