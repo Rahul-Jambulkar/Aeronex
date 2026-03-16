@@ -1,0 +1,35 @@
+<!-- ========================================
+     Aeronex - Navbar Component
+     Reusable navigation bar partial
+     ======================================== -->
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-blur">
+  <div class="max-w-6xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6c63ff] to-[#00e5ff] flex items-center justify-center">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="#ffffff" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="font-heading font-semibold text-xl tracking-tight text-white">AERONEX</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#mission" class="nav-link text-sm">Mission</a>
+        <a href="#solutions" class="nav-link text-sm">Solutions</a>
+        <a href="#technology" class="nav-link text-sm">Technology</a>
+        <a href="#contact" class="nav-link text-sm">Contact</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:flex items-center gap-2 text-xs text-gray-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          Systems Online
+        </span>
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
