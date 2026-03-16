@@ -1,0 +1,141 @@
+/* ============================================
+   Aeronex - Animation Stylesheet
+   GSAP-complementary CSS animations
+   ============================================ */
+
+/* === Fade-in keyframes (initial load, before GSAP takes over) === */
+.fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-delay-1 { animation-delay: 0.15s; }
+.fade-in-delay-2 { animation-delay: 0.3s; }
+.fade-in-delay-3 { animation-delay: 0.45s; }
+.fade-in-delay-4 { animation-delay: 0.6s; }
+.fade-in-delay-5 { animation-delay: 0.75s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Floating animation === */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+/* === SVG line draw === */
+.line-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 3s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+/* === Subtle rotate (for orbital elements) === */
+.orbit-rotate {
+  animation: orbitSpin 20s linear infinite;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbit-rotate-reverse {
+  animation: orbitSpinReverse 25s linear infinite;
+}
+
+@keyframes orbitSpinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* === Glow pulse for accent elements === */
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(108, 99, 255, 0.5);
+  }
+}
+
+/* === Text shimmer === */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* === Star twinkle === */
+.twinkle {
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* === Slide in from left/right (GSAP fallback) === */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-in-left.active,
+.slide-in-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* === Scale entrance === */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in.active {
+  opacity: 1;
+  transform: scale(1);
+}
