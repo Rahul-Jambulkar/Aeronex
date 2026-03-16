@@ -1,0 +1,20 @@
+/* Local font fallbacks for Space Grotesk and Inter */
+/* Using system fonts that closely match the original Google Fonts */
+
+/* Space Grotesk fallback */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Space Grotesk'), local('SF Pro Display'), local('Segoe UI'), local('system-ui');
+}
+
+/* Inter fallback */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: local('Inter'), local('-apple-system'), local('BlinkMacSystemFont'), local('Segoe UI');
+}
